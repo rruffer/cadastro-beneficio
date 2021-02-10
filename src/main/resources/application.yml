@@ -1,3 +1,7 @@
+     
+queue:
+  order:
+    name: cadastro-beneficiario
 server:
   servlet:
     context-path: /cadastro-beneficio/api
@@ -14,3 +18,7 @@ spring:
       uri: mongodb+srv://rruffer:alucard@cluster0.zkxw0.gcp.mongodb.net/caixaeletronicodb?retryWrites=true&w=majority
   datasource:
     driver-class-name: mongodb.jdbc.MongoDriver
+springdoc:
+  swagger-ui:
+    filter: true
+    operationsSorter: method
