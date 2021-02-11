@@ -1,7 +1,6 @@
-     
 queue:
-  order:
-    name: cadastro-beneficiario
+  cadastro: cadastro-beneficiario
+  calculo: cadastro-beneficiario
 server:
   servlet:
     context-path: /cadastro-beneficio/api

@@ -19,6 +19,7 @@ public class Cliente {
 	private String email;
 	private Long totalSaldoAposentadoria;
 	private Integer qtdAnosAposentadoria;
+	private Long valorMensalAposentadoria;
 
 	@Id
 	public Long getId() {
@@ -67,6 +68,14 @@ public class Cliente {
 
 	public void setQtdAnosAposentadoria(Integer qtdAnosAposentadoria) {
 		this.qtdAnosAposentadoria = qtdAnosAposentadoria;
+	}
+
+	public Long getValorMensalAposentadoria() {
+		return valorMensalAposentadoria;
+	}
+
+	public void setValorMensalAposentadoria(Long valorMensalAposentadoria) {
+		this.valorMensalAposentadoria = valorMensalAposentadoria;
 	}
 
 	@Override
