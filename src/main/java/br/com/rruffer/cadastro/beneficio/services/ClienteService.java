@@ -36,9 +36,21 @@ public class ClienteService {
 		
 	}
 	
+	public void salvarCalulo(ClienteDTO clienteDTO) throws Exception {
+		
+		Cliente cliente = clienteRepository.findByCpf(clienteDTO.getCpf());
+		
+		if (cliente != null) {
+			cliente.setValorMensalAposentadoria(clienteDTO.getValorMensalAposentadoria());
+			clienteRepository.save(cliente);
+		} 
+		
+	}
+	
 	public Cliente salvar(ClienteDTO clienteDTO) throws Exception {
 		
 		if (clienteRepository.findByCpf(clienteDTO.getCpf()) != null) {
+			
 			return null;
 		} else {
 			Cliente cliente = mapper.map(clienteDTO, Cliente.class);

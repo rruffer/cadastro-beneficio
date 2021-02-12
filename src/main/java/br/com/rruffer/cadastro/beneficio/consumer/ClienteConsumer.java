@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.com.rruffer.cadastro.beneficio.dto.ClienteDTO;
-import br.com.rruffer.cadastro.beneficio.repository.ClienteRepository;
 import br.com.rruffer.cadastro.beneficio.services.ClienteService;
 import br.com.rruffer.cadastro.beneficio.util.JsonUtil;
 
@@ -17,8 +16,13 @@ public class ClienteConsumer {
 
 	@RabbitListener(queues = "${queue.calculo}")
 	public void calculo(String msg) {
-		ClienteDTO clienteDTO = JsonUtil.deserializarJSON(msg, ClienteDTO.class);
 		
+		try {
+			ClienteDTO clienteDTO = JsonUtil.deserializarJSON(msg, ClienteDTO.class);
+			clienteService.salvarCalulo(clienteDTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		
 	}

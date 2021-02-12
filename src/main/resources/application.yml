@@ -1,6 +1,6 @@
 queue:
   cadastro: cadastro-beneficiario
-  calculo: cadastro-beneficiario
+  calculo: calculo-aposentadoria
 server:
   servlet:
     context-path: /cadastro-beneficio/api
